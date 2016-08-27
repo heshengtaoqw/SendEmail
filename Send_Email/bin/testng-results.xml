@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="137918" started-at="2016-08-27T08:04:08Z" finished-at="2016-08-27T08:06:26Z">
+    <groups>
+    </groups>
+    <test name="test1" duration-ms="137918" started-at="2016-08-27T08:04:08Z" finished-at="2016-08-27T08:06:26Z">
+      <class name="com_tfs.SendEmail">
+        <test-method status="PASS" signature="openHomePage(java.lang.String)[pri:0, instance:com_tfs.SendEmail@325e14]" name="openHomePage" duration-ms="4737" started-at="2016-08-27T16:04:08Z" finished-at="2016-08-27T16:04:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://exmail.qq.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openHomePage -->
+        <test-method status="PASS" signature="pasue()[pri:0, instance:com_tfs.SendEmail@325e14]" name="pasue" is-config="true" duration-ms="4997" started-at="2016-08-27T16:04:13Z" finished-at="2016-08-27T16:04:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pasue -->
+        <test-method status="PASS" signature="openLoginPage()[pri:0, instance:com_tfs.SendEmail@325e14]" name="openLoginPage" duration-ms="1683" started-at="2016-08-27T16:04:18Z" depends-on-methods="com_tfs.SendEmail.openHomePage" finished-at="2016-08-27T16:04:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openLoginPage -->
+        <test-method status="PASS" signature="pasue()[pri:0, instance:com_tfs.SendEmail@325e14]" name="pasue" is-config="true" duration-ms="4997" started-at="2016-08-27T16:04:20Z" finished-at="2016-08-27T16:04:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pasue -->
+        <test-method status="PASS" signature="authentication(java.lang.String, java.lang.String)[pri:0, instance:com_tfs.SendEmail@325e14]" name="authentication" duration-ms="701" started-at="2016-08-27T16:04:25Z" depends-on-methods="com_tfs.SendEmail.openLoginPage" finished-at="2016-08-27T16:04:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[hest@tritonsfs.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[tfsA123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- authentication -->
+        <test-method status="PASS" signature="pasue()[pri:0, instance:com_tfs.SendEmail@325e14]" name="pasue" is-config="true" duration-ms="4997" started-at="2016-08-27T16:04:25Z" finished-at="2016-08-27T16:04:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pasue -->
+        <test-method status="PASS" signature="writeEmailPage()[pri:0, instance:com_tfs.SendEmail@325e14]" name="writeEmailPage" duration-ms="140" started-at="2016-08-27T16:04:30Z" depends-on-methods="com_tfs.SendEmail.authentication" finished-at="2016-08-27T16:04:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- writeEmailPage -->
+        <test-method status="PASS" signature="pasue()[pri:0, instance:com_tfs.SendEmail@325e14]" name="pasue" is-config="true" duration-ms="5008" started-at="2016-08-27T16:04:30Z" finished-at="2016-08-27T16:04:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pasue -->
+        <test-method status="PASS" signature="writeEmail(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com_tfs.SendEmail@325e14]" name="writeEmail" duration-ms="80255" started-at="2016-08-27T16:04:35Z" depends-on-methods="com_tfs.SendEmail.writeEmailPage" finished-at="2016-08-27T16:05:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[hest@tritonsfs.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[this is a test subject from Eclipse]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[this is a text from Eclipse]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- writeEmail -->
+        <test-method status="PASS" signature="pasue()[pri:0, instance:com_tfs.SendEmail@325e14]" name="pasue" is-config="true" duration-ms="4997" started-at="2016-08-27T16:05:56Z" finished-at="2016-08-27T16:06:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pasue -->
+        <test-method status="PASS" signature="sendConfirm()[pri:0, instance:com_tfs.SendEmail@325e14]" name="sendConfirm" duration-ms="3325" started-at="2016-08-27T16:06:01Z" depends-on-methods="com_tfs.SendEmail.writeEmail" finished-at="2016-08-27T16:06:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendConfirm -->
+        <test-method status="PASS" signature="pasue()[pri:0, instance:com_tfs.SendEmail@325e14]" name="pasue" is-config="true" duration-ms="5007" started-at="2016-08-27T16:06:04Z" finished-at="2016-08-27T16:06:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pasue -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com_tfs.SendEmail@325e14]" name="quit" is-config="true" duration-ms="16784" started-at="2016-08-27T16:06:09Z" finished-at="2016-08-27T16:06:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- com_tfs.SendEmail -->
+    </test> <!-- test1 -->
+  </suite> <!-- Default suite -->
+</testng-results>

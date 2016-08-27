@@ -1,0 +1,78 @@
+package com.tfs;
+
+import org.openqa.selenium.*;
+
+import org.testng.annotations.Test;
+import org.openqa.selenium.firefox.*;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterClass;
+
+public class SendEmail 
+{
+  WebDriver browser = new FirefoxDriver();
+	
+  @Test
+  public void openHomePage()
+  {
+	  browser.get("https://exmail.qq.com");
+  }
+ 
+  @Test(dependsOnMethods = "openHomePage" )
+  public void openLoginPage()
+  {
+	  WebElement loginButton = browser.findElement(By.linkText("µÇÂ¼"));
+	  loginButton.click();
+  }
+  
+  @Test(dependsOnMethods ="openLoginPage")
+  public void authentication()
+  {
+	  WebElement userNameField = browser.findElement(By.id("inputuin"));
+	  WebElement passwordField = browser.findElement(By.id("pp"));
+	  WebElement checkbox = browser.findElement(By.id("ss"));
+	  WebElement buttonLogin = browser.findElement(By.id("btlogin"));
+	  checkbox.click();
+	  userNameField.sendKeys("hest@tritonsfs.com");
+	  passwordField.sendKeys("tfsA123");
+	  buttonLogin.submit();
+  }
+  
+  @AfterMethod
+  public void pasue() throws Exception
+  {
+	  Thread.sleep(5000);
+  }
+  
+  @Test(dependsOnMethods = "authentication")
+  public void writeEmailPage()
+  {
+	  WebElement writeButton = browser.findElement(By.linkText("Ð´ÐÅ"));
+	  writeButton.click();
+  }
+  
+  @Test(dependsOnMethods = "writeEmailPage")
+  public void writeEmail()
+  {
+	  WebDriver mainFrame =  browser.switchTo().frame(("mainFrame"));
+	  WebElement sendTo = mainFrame.findElement(By.xpath(".//*[@id='toAreaCtrl']/div[2]/input"));
+	  WebElement sendFrom = mainFrame.findElement(By.id("subject"));
+	  sendTo.sendKeys("hest@tritonsfs.com");
+	  sendFrom.sendKeys("this is a test subject from Eclipse");
+	  WebDriver textFrame = mainFrame.switchTo().frame(mainFrame.findElement(By.className("QMEditorIfrmEditArea")));
+	  textFrame.findElement(By.tagName("body")).sendKeys("this is a text from Eclipse");
+  }
+  
+  @Test(dependsOnMethods = "writeEmail")
+  public void sendConfirm()
+  {
+	  
+  }
+  
+  @AfterClass
+  public void quit()
+  {
+	  browser.quit();
+  }
+  
+}

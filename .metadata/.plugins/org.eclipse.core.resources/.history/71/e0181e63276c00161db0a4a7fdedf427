@@ -1,0 +1,37 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default suite" parallel="classes">
+
+  <test verbose="2" name="test1" preserve-order="true">
+   <parameter name = "test1" value = "parameter test" />
+   <parameter name = "username" value = "hest@tritonsfs.com" />
+   <parameter name = "password" value = "tfsA123" />
+   <parameter name = "sendTo" value = "hest@trionsfs.com" />
+   <parameter name = "subject" value = "this is a test subject from Eclipse" />
+   <parameter name = "context" value = "this is a text from Eclipse" />
+   
+    <groups>
+	        <run>
+	            <include name = "group1"/> 
+	        </run>
+    </groups>
+    
+   	<classes>
+		
+		<class name="testNG_Baidu.NewTest2"/>
+
+    </classes>
+    
+  </test>  
+  
+  <!--
+   <test verbose="2" name="test2">
+    <classes>
+      <class name="testNG_Baidu.NewTest1"/>
+    </classes>
+  </test> 
+  Default test -->
+  
+</suite> <!-- Default suite -->
+

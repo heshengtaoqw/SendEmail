@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Default suite" parallel="classes">
+
+  <test verbose="2" name="test1" preserve-order="true">
+   <parameter name = "url" value = "https://exmail.qq.com" />
+   <parameter name = "username" value = "hest@tritonsfs.com" />
+   <parameter name = "password" value = "tfsA123" />
+   <parameter name = "send_To" value = "hest@trionsfs.com" />
+   <parameter name = "subjects" value = "this is a test subject from Eclipse" />
+   <parameter name = "context" value = "this is a text from Eclipse" />
+   
+   <!--
+    <groups>
+	        <run>
+	            <include name = "group1"/> 
+	        </run>
+    </groups>
+    -->
+   	<classes>
+   	    <!--  
+   	   <class name="testNG_Baidu.TestNG_Basic"/>
+		<methods>
+			<include name = "f" />
+			<include name = "g" />
+			<include name = "c" />
+			<include name = "paraTest"/>
+		</methods>
+		-->
+		<class name="com_tfs.SendEmail"/>
+			<methods>
+			<include name = "openHomePage" />
+			<include name = "openLoginPage" />
+			<include name = "authentication" />
+			<include name = "writeEmailPage" />
+			<include name = "writeEmail" />
+			<include name = "sendConfirm" />
+			<include name = "pasue" />
+			<include name = "quit" />
+			</methods>
+    </classes>
+    
+  </test>  
+  
+  <!--
+   <test verbose="2" name="test2">
+    <classes>
+      <class name="testNG_Baidu.NewTest1"/>
+    </classes>
+  </test> 
+  Default test -->
+  
+</suite> <!-- Default suite -->
+

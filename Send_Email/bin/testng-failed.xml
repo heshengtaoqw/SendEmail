@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]" parallel="classes">
+  <parameter name="send_To" value="hest@trionsfs.com"/>
+  <parameter name="password" value="tfsA123"/>
+  <parameter name="subjects" value="this is a test subject from Eclipse"/>
+  <parameter name="context" value="this is a text from Eclipse"/>
+  <parameter name="url" value="https://exmail.qq.com"/>
+  <parameter name="username" value="hest@tritonsfs.com"/>
+  <test name="test1(failed)" parallel="classes">
+    <parameter name="send_To" value="hest@trionsfs.com"/>
+    <parameter name="password" value="tfsA123"/>
+    <parameter name="subjects" value="this is a test subject from Eclipse"/>
+    <parameter name="context" value="this is a text from Eclipse"/>
+    <parameter name="url" value="https://exmail.qq.com"/>
+    <parameter name="username" value="hest@tritonsfs.com"/>
+    <classes>
+      <class name="com_tfs.SendEmail">
+        <methods>
+          <include name="authentication"/>
+          <include name="pasue"/>
+          <include name="quit"/>
+          <include name="openHomePage"/>
+          <include name="writeEmail"/>
+          <include name="openLoginPage"/>
+          <include name="sendConfirm"/>
+          <include name="writeEmailPage"/>
+        </methods>
+      </class> <!-- com_tfs.SendEmail -->
+    </classes>
+  </test> <!-- test1(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

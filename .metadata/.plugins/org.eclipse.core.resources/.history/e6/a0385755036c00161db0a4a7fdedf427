@@ -1,0 +1,62 @@
+package com.tfs;
+
+import org.openqa.selenium.*;
+
+import org.testng.annotations.Test;
+import org.openqa.selenium.firefox.*;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.AfterMethod;
+
+public class SendEmail 
+{
+  WebDriver browser = new FirefoxDriver();
+	
+  @Test
+  public void openHomePage()
+  {
+	  browser.get("https://exmail.qq.com");
+  }
+ 
+  @Test(dependsOnMethods = "openHomePage" )
+  public void openLoginPage()
+  {
+	  WebElement loginButton = browser.findElement(By.linkText("µÇÂ¼"));
+	  loginButton.click();
+  }
+  
+  @Test(dependsOnMethods ="openLoginPage")
+  public void authentication()
+  {
+	  WebElement userNameField = browser.findElement(By.id("inputuin"));
+	  WebElement passwordField = browser.findElement(By.id("pp"));
+	  WebElement checkbox = browser.findElement(By.id("ss"));
+	  WebElement buttonLogin = browser.findElement(By.id("btlogin"));
+	  checkbox.click();
+	  userNameField.sendKeys("hest@tritonsfs.com");
+	  passwordField.sendKeys("tfsA123");
+	  buttonLogin.submit();
+  }
+  
+  @AfterMethod
+  public void pasue() throws Exception
+  {
+	  Thread.sleep(5000);
+  }
+  
+  @Test(dependsOnMethods = "authentication")
+  public void writeEmail()
+  {
+	  WebElement writeButton = browser.findElement(By.linkText("Ð´ÐÅ"));
+	  writeButton.click();
+	  browser.switchTo().frame(("mainFrame"));
+	  
+  }
+  
+  @Test(dependsOnMethods = "writeEmail")
+  public void sendTo()
+  {
+	  WebElement sendTo = browser.findElement(By.xpath(".//*[@id='toAreaCtrl']/div[2]/input"));
+	  sendTo.sendKeys("740578857@qq.com");
+  }
+  
+}
